@@ -12,33 +12,32 @@ public class SistemasOperacionais_Thread extends Somador {
             vet[i] = gerador.nextInt(9);
         }
 
-        Somador t1 = new Somador();
-        t1.setPriority(MIN_PRIORITY);
-        t1.setV(vet);
+        Somador s1 = new Somador();
+        s1.setPriority(MIN_PRIORITY);
+        s1.setV(vet);
 
-        Somador t2 = new Somador();
-        t2.setPriority(MAX_PRIORITY);
-        t2.setV(vet);
+        Somador s2 = new Somador();
+        s2.setPriority(MAX_PRIORITY);
+        s2.setV(vet);
 
-        Somador t3 = new Somador();
-        t3.setPriority(MAX_PRIORITY);
-        t3.setV(vet);
+        Somador s3 = new Somador();
+        s3.setPriority(MAX_PRIORITY);
+        s3.setV(vet);
 
-        Somador t4 = new Somador();
-        t4.setPriority(NORM_PRIORITY);
-        t4.setV(vet);
+        Somador s4 = new Somador();
+        s4.setPriority(NORM_PRIORITY);
+        s4.setV(vet);
 
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
+        s1.start();
+        s2.start();
+        s3.start();
+        s4.start();
 
-        t1.join();
-        t2.join();
-        t3.join();
-        t4.join();
+        s1.join();
+        s2.join();
+        s3.join();
+        s4.join();
 
-        System.out.println(t1.getTotal() + t2.getTotal() + t3.getTotal() + t4.getTotal());
-
+        System.out.println(s1.getTotal() + s2.getTotal() + s3.getTotal() + s4.getTotal());
     }
 }
