@@ -1,21 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SO;
 
-/**
- *
- * @author aluno
- */
 public class Somador extends Thread {
 
-    int vetor[] = new int[100];
+    private final long valorInicial;
+    private final long valorFinal;
+    private long total = 0;
 
+    //método construtor que receberá os parâmetros da tarefa
+    public Somador(int valorInicial, int valorFinal) {
+        this.valorInicial = valorInicial;
+        this.valorFinal = valorFinal;
+    }
+
+    //método que retorna o total calculado
+    public long getTotal() {
+        return total;
+    }
+
+    /*
+     Este método se faz necessário para que possamos dar start() na Thread 
+     e iniciar a tarefa em paralelo
+     */
+    @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(vetor[i]);
+
+        System.out.println("\nNome: " + Thread.currentThread().getName());
+        //System.out.println("Prioridade: " + Thread.currentThread().getPriority());
+
+        for (long i = valorInicial; i <= valorFinal; i++) {
+            total += i;
         }
     }
 }
