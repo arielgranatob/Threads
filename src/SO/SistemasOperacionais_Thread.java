@@ -7,8 +7,8 @@ public class SistemasOperacionais_Thread extends Somador {
     public static void main(String[] args) throws InterruptedException {
 
         Random gerador = new Random();
-        int vet[] = new int[100];
-        for (int i = 0; i < 100; i++) {
+        int vet[] = new int[100000];
+        for (int i = 0; i < 100000; i++) {
             vet[i] = gerador.nextInt(9);
         }
 
@@ -38,7 +38,7 @@ public class SistemasOperacionais_Thread extends Somador {
         t3.join();
         t4.join();
 
-        System.out.println(t1.getTotal() + t2.getTotal() + t3.getTotal());
+        System.out.println(t1.getTotal() + t2.getTotal() + t3.getTotal() + t4.getTotal());
 
     }
 }

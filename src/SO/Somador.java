@@ -6,7 +6,7 @@ public class Somador extends Thread {
     private int v[];
 
     public Somador() {
-        this.v = new int[100];
+        this.v = new int[100000];
     }
 
     public void setV(int[] v) {
@@ -19,7 +19,7 @@ public class Somador extends Thread {
 
     public void run() {
         
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             total += v[i];
         }
     }
