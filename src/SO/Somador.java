@@ -1,11 +1,16 @@
 package SO;
 
 public class Somador extends Thread {
-    private long total = 0;
-    int v[];
+
+    private long total;
+    private int v[];
 
     public Somador() {
-        this.v = new int[100000];
+        this.v = new int[100];
+    }
+
+    public void setV(int[] v) {
+        this.v = v;
     }
 
     public long getTotal() {
@@ -13,11 +18,8 @@ public class Somador extends Thread {
     }
 
     public void run() {
-
-        System.out.println("\nNome: " + Thread.currentThread().getName());
-        System.out.println("Prioridade: " + Thread.currentThread().getPriority());
-
-        for (int i = 0; i < 100000; i++) {
+        
+        for (int i = 0; i < 100; i++) {
             total += v[i];
         }
     }
